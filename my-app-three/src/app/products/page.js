@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Welcome to Products',
+  description: 'lorem ipsum description',
+}
 export default function Products() {
     return (
         <div>

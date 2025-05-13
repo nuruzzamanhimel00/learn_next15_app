@@ -11,6 +11,9 @@ export default function Nav(){
         { href: "/blog", label: "Blog" },
         { href: "/products", label: "Products" },
         { href: "/product-checkout", label: "Product Checkout" },
+        { href: [
+            "/login",'/register'
+        ], label: "Auth" },
         { href: "/article/article-name-123?query=params-123", label: "Articles-123" },
         { href: "/article/article-name-4567?query=params-4567", label: "Articles-4567" },
     ];
@@ -28,15 +31,18 @@ export default function Nav(){
             >
                 {links.map(({ href, label }) => {
                   // Remove query parameters for comparison
-                    const pathWithoutQuery = href.split('?')[0];
-                    // console.log('pathWithoutQuery',pathWithoutQuery)
+                  
+                    const pathWithoutQuery = Array.isArray(href) ? href[0].split('?')[0] : href.split('?')[0];
+                    const pathnameData = pathname.split('?')[0];
+                    const hrefRemake  = Array.isArray(href) ? href[0].split('?')[0] : href;
                     // Check if the current path matches the href
-                    const isActive = pathWithoutQuery === pathname ;
+                    console.log('pathname',pathname)
+                    const isActive =  Array.isArray(href) ? href.includes(pathnameData) : pathWithoutQuery === pathname;
                     
                     return (
-                        <li key={href}>
+                        <li key={hrefRemake}>
                         <Link
-                            href={href}
+                            href={hrefRemake}
                             style={{
                             color: isActive ? "red" : "black",
                             textDecoration: isActive ? "underline" : "none",

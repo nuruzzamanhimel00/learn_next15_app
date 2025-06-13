@@ -36,7 +36,7 @@ export default function Nav(){
                     const pathnameData = pathname.split('?')[0];
                     const hrefRemake  = Array.isArray(href) ? href[0].split('?')[0] : href;
                     // Check if the current path matches the href
-                    console.log('pathname',pathname)
+                    // console.log('pathname',pathname)
                     const isActive =  Array.isArray(href) ? href.includes(pathnameData) : pathWithoutQuery === pathname;
                     
                     return (

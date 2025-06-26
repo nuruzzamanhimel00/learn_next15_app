@@ -2,6 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "./_lib/nav";
+import ErrorWrapper from "./error-wrapper.js"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +36,10 @@ export default function RootLayout({ children }) {
           <h1>My App</h1>
         </header>
         <Nav />
-        <main>{children}</main>
+        <ErrorWrapper>
+
+          <main>{children}</main>
+        </ErrorWrapper>
         <footer style={{
           color: 'white',
           fontSize: '20px',

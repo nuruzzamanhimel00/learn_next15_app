@@ -1,9 +1,11 @@
 import Card from "@/components/Card";
 
-export default function Revenue(){
+
+export default function Login(){
     return (
         <Card>
-            <h1>Revenue Parallel Routing</h1>
+            <h1>This is a login page</h1>
+            
         </Card>
     )
 }

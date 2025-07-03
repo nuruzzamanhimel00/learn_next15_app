@@ -16,7 +16,8 @@ export default function Nav(){
         ], label: "Auth" },
         { href: "/article/article-name-123?query=params-123", label: "Articles-123" },
         { href: "/article/article-name-4567?query=params-4567", label: "Articles-4567" },
-            { href: "/order-product", label: "Order Product" },
+        { href: "/order-product", label: "Order Product" },
+        { href: "/photo-feed", label: "Photo Feed " },
     ];
     //   console.log('pathname',pathname)
     return (

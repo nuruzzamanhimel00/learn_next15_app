@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import Image1 from "./photos/1.jpg"
+import imageArray from "../_lib/ImageData"
+import Link from 'next/link'
 export default function PhotoFood(){
     return (
         <>
@@ -18,14 +20,21 @@ export default function PhotoFood(){
             }
         }
         >
-            <div>
-                 <Image src={Image1} alt="" style={
-                    {
-                        width:'300px;',
-                        height:'300px;'
-                    }
-                 } />
-            </div>
+            {
+                imageArray.map((item, index) => (
+                    <Link href={`/photo-feed/${item.id}`} key={index}>
+                        <div >
+                                <Image src={item.src} alt="" style={
+                                    {
+                                        width:'300px',
+                                        height:'300px'
+                                    }
+                                } />
+                            </div>
+                    </Link>
+                ))
+            }
+        
             
         </div>
         </>

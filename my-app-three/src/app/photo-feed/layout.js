@@ -1,7 +1,8 @@
-export default function PhotoFeedLayout({ children }) {
+
+export default function PhotoFeedLayout({ children, modal }) {
     return (
         <>
-            
+            {modal}
             {children}
         </>
     );

@@ -1,19 +1,22 @@
 'use client'
 
-import { useState } from 'react';
+
 import imageArray from "../../../_lib/ImageData.js"
 import Image from 'next/image'
 import Modal from "../../../../components/Modal.js"
 import { notFound } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 export default function ImageDetail({ params }) {
-    const [isOpen, setIsOpen] = useState(true);
+    const router = useRouter();
     const { id } = params;
     const findImage = imageArray.find(image => image.id.toString() === id.toString());
 
     if (!findImage) notFound();
 
-    const onClose = () => setIsOpen(false);
+    const onClose = () => {
+         router.back();
+    };
 
 
     return (
@@ -22,7 +25,7 @@ export default function ImageDetail({ params }) {
         
 
             {/* Modal itself */}
-            <Modal isOpen={isOpen} onClose={onClose} title="Image Detail">
+            <Modal  onClose={onClose} title="Image Detail">
                 
                 <div style={{
                     display: 'flex',

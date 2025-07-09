@@ -3,8 +3,8 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div>
+    <divb>
       <h1> Welcome in Himel </h1>
-    </div>
+    </divb>
   );
 }

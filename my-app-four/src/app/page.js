@@ -2,6 +2,7 @@ import ProductPage from "./product/page.js"
 import ProductReviewPage from "./product-review/page.js"
 import { Suspense } from 'react'
 
+
 export default function HomePage(){
   return (
     <>

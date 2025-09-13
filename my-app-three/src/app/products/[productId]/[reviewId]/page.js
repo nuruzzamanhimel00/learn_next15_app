@@ -10,6 +10,10 @@ export default async function ProductReviewItem({params}) {
     if(reviewId > 100){
         redirect('/')
     }
+
+    if(reviewId > 50){
+        throw new Error("Review can not greater than 50")
+    }
     return (
         <div>
             <h1> Welcome in Product Item: {productId} and review id {reviewId}</h1>
